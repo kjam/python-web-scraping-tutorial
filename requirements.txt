@@ -1,5 +1,6 @@
 BeautifulSoup==3.2.1
 argparse==1.2.1
+cssselect==0.9.1
 lxml==3.3.3
 selenium==2.41.0
 wsgiref==0.1.2
