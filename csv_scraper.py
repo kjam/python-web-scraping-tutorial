@@ -1,7 +1,7 @@
 from csv import DictReader
 from datetime import datetime
 
-with open('/home/katharine/Downloads/schedule.csv') as document:
+with open('data/schedule.csv') as document:
     reader = DictReader(document)
     for row in reader:
         day = datetime.strptime(row.get('START_DATE'), '%m/%d/%y')
