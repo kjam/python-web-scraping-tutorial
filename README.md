@@ -37,6 +37,12 @@ If you are using Windows, it might be worth it to run this within a Linux Virtua
 Please reach out to me if you have any questions on getting the initial requirements set up. Thanks!
 
 
+Firefox Web Browser
+---------------------
+
+Firefox comes as the default web driver for Selenium. To use Selenium easily, please [download and install Firefox](http://www.mozilla.org/en-US/firefox/new/).
+
+
 Questions?
 ----------
 /msg kjam on freenode or @kjam on twitter
