@@ -42,6 +42,11 @@ Firefox Web Browser
 
 Firefox comes as the default web driver for Selenium. To use Selenium easily, please [download and install Firefox](http://www.mozilla.org/en-US/firefox/new/).
 
+Using PIP
+------------
+
+If you have never used PIP before you will need to sudo easy_install pip or brew install pip. PIP is a python package manager and it's really super so I highly advise using it!
+
 
 Questions?
 ----------
