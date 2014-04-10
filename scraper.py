@@ -1,5 +1,4 @@
 import urllib2
-import simplejson
 from lxml import html
 from email.MIMEText import MIMEText
 import smtplib
@@ -13,7 +12,7 @@ def send_email(subject, message, from_addr=GMAIL_LOGIN, to_addr=GMAIL_LOGIN):
     msg['From'] = from_addr
     msg['To'] = to_addr
     msg['Reply-To'] = 'happyhours@noreply.com'
-                    
+
     server = smtplib.SMTP('smtp.gmail.com',587) #port 465 or 587
     server.ehlo()
     server.starttls()
@@ -46,30 +45,30 @@ if __name__ == '__main__':
                 'table table div table td')
 
 
-    # Then, I'm going to sort out the *exact* parts of the page 
+    # Then, I'm going to sort out the *exact* parts of the page
     # that match what I'm looking for...
     for t in tables:
         if t.cssselect('p.calendar_EventTitle'):
             found_happy_hours.append(t.text_content())
 
     print "The scraper found %d happy hours!" % len(found_happy_hours)
-   
-    # Now I'm going to loop through the food I like 
+
+    # Now I'm going to loop through the food I like
     # and see if any of the happy hour descriptions match
     for food in stuff_i_like:
         for hh in found_happy_hours:
             # checking for text AND making sure I don't have duplicates
-            if food in hh and hh not in my_happy_hours: 
+            if food in hh and hh not in my_happy_hours:
                 print "YAY! I found some %s!" % food
                 my_happy_hours.append(hh)
-    
+
     print "I think you might like %d of them, yipeeeee!" % len(my_happy_hours)
-    
+
     #Now, let's make a mail message we can read:
     message = 'Hey Katharine,\n\n\n'
-    message += 'OMG, I found some stuff for you in Downtown, take a look.\n\n' 
+    message += 'OMG, I found some stuff for you in Downtown, take a look.\n\n'
     message += '==============================\n'.join(my_happy_hours)
-    message = message.encode('utf-8') 
+    message = message.encode('utf-8')
     # To read more about encoding:
     # http://diveintopython.org/xml_processing/unicode.html
     message = message.replace('\t','').replace('\r','')
@@ -77,6 +76,6 @@ if __name__ == '__main__':
 
     #And email it to ourselves!
     email = 'katharine@pyladies.com'
-    send_email('Happy Hour Update',message, 
+    send_email('Happy Hour Update',message,
                 from_addr=GMAIL_LOGIN, to_addr=email)
 
