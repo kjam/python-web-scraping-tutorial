@@ -27,6 +27,7 @@ LXML and Selenium
 You will need both [LXML](http://lxml.de/) and [Selenium](http://selenium-python.readthedocs.org/en/latest/index.html) to follow this tutorial in it's entirety.
 
 If you are using a Mac, I would highly recommend using [Homebrew](http://brew.sh/). It will help make pip install *very easy* for you to use.
+  * [Homebrew and LXML Installation](http://geekforbrains.com/how-to-install-lxml-for-python-using-homebrew-and-pip-in-3-steps)
   * [More help on Installing LXML on Mac](http://lxml.de/installation.html#installation)
   * [And additional suggestions for LXML on Mac](http://stackoverflow.com/questions/1277124/how-do-you-install-lxml-on-os-x-leopard-without-using-macports-or-fink)
 
